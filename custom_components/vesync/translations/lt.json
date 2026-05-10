@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSync paskyra jau sukonfig\u016bruota",
+            "reauth_successful": "Pakartotinis autentifikavimas buvo s\u0117kmingas",
+            "wrong_account": "Paskyra, kuri\u0105 bandote i\u0161 naujo autentifikuoti, skiriasi nuo sukonfig\u016bruotos."
+        },
+        "error": {
+            "api_response_error": "API atsakymo klaida",
+            "invalid_auth": "Neteisingas autentifikavimas",
+            "server_error": "\u012evyko serverio klaida"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "El. pa\u0161tas"
+                },
+                "data_description": {
+                    "password": "Su j\u016bs\u0173 VeSync paskyra susietas slapta\u017eodis",
+                    "username": "Su j\u016bs\u0173 VeSync paskyra susietas el. pa\u0161to adresas"
+                },
+                "description": "VeSync integracija turi i\u0161 naujo patvirtinti j\u016bs\u0173 paskyros autenti\u0161kum\u0105",
+                "title": "Baig\u0117si {name} autentifikavimo galiojimas"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "El. pa\u0161tas"
+                },
+                "data_description": {
+                    "password": "Su j\u016bs\u0173 VeSync paskyra susietas slapta\u017eodis",
+                    "username": "Su j\u016bs\u0173 VeSync paskyra susietas el. pa\u0161to adresas"
+                },
+                "description": "\u012eveskite paskyr\u0105, naudot\u0105 vesync program\u0117l\u0117je. 2FA nepalaikomas ir turi b\u016bti i\u0161jungtas.",
+                "title": "\u012eveskite vartotojo vard\u0105 ir slapta\u017eod\u012f"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Ma\u017eai vandens"
+            },
+            "water_tank_lifted": {
+                "name": "Vandens bakas pakeltas"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatinis",
+                            "normal": "Normalus",
+                            "pet": "Augintinis",
+                            "sleep": "Miegoti",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Dr\u0117gm\u0117"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "R\u016bko lygis"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Naktinio ap\u0161vietimo lygis",
+                "state": {
+                    "bright": "Ry\u0161kus",
+                    "dim": "Pritemdyti",
+                    "off": "I\u0161jungta",
+                    "on": "\u012ejungta"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Oro kokyb\u0117"
+            },
+            "cook_set_temp": {
+                "name": "Nustatyta gaminimo temperat\u016bra"
+            },
+            "cook_set_time": {
+                "name": "Nustatytas gaminimo laikas"
+            },
+            "cook_status": {
+                "name": "Gaminimo b\u016bsena",
+                "state": {
+                    "cooking": "Gaminimas",
+                    "cooking_end": "Gaminimas baigtas",
+                    "cooking_stop": "Gaminimas sustabdytas",
+                    "heating": "\u012ekaitinimas",
+                    "preheat_end": "\u012ekaitinimas baigtas",
+                    "preheat_stop": "\u012ekaitinimas sustabdytas",
+                    "pull_out": "Stal\u010dius i\u0161trauktas",
+                    "standby": "Bud\u0117jimo re\u017eimas"
+                }
+            },
+            "current_power": {
+                "name": "Dabartin\u0117 galia"
+            },
+            "current_temp": {
+                "name": "Dabartin\u0117 temperat\u016bra"
+            },
+            "current_voltage": {
+                "name": "Srov\u0117s \u012ftampa"
+            },
+            "energy_month": {
+                "name": "Energijos suvartojimas kas m\u0117nes\u012f"
+            },
+            "energy_today": {
+                "name": "Energijos naudojimas \u0161iandien"
+            },
+            "energy_week": {
+                "name": "Energijos suvartojimas kas savait\u0119"
+            },
+            "energy_year": {
+                "name": "Energijos suvartojimas kasmet"
+            },
+            "filter_life": {
+                "name": "Filtro tarnavimo laikas"
+            },
+            "preheat_set_time": {
+                "name": "\u012ekaitinimo nustatytas laikas"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Automatinis i\u0161sijungimas"
+            },
+            "child_lock": {
+                "name": "Vaik\u0173 u\u017eraktas"
+            },
+            "display": {
+                "name": "Ekranas"
+            },
+            "drying_mode_power_off": {
+                "name": "\u012ejunkite d\u017eiovinimo re\u017eim\u0105, kai maitinimas i\u0161jungtas"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "\u012e \u201eHome Assistant\u201c \u012ftraukiami nauji \"VeSync\" prietaisai.",
+            "name": "Atnaujinkite prietaisus"
+        }
+    }
+}

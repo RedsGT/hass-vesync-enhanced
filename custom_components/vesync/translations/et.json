@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSynci konto on juba seadistatud",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus",
+            "wrong_account": "Konto, mida proovid taastuvastada, erineb seadistatud kontost."
+        },
+        "error": {
+            "api_response_error": "API vastuse viga",
+            "invalid_auth": "Tuvastamise viga",
+            "server_error": "Serveri viga"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "E-posti aadress"
+                },
+                "data_description": {
+                    "password": "VeSynci kontoga seotud salas\u00f5na",
+                    "username": "VeSynci kontoga seotud e-posti aadress"
+                },
+                "description": "VeSynci sidumine peab konto uuesti autentima",
+                "title": "{name} autentimine aegus"
+            },
+            "user": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "E-post"
+                },
+                "data_description": {
+                    "password": "VeSynci kontoga seotud salas\u00f5na",
+                    "username": "VeSynci kontoga seotud e-posti aadress"
+                },
+                "description": "Sisesta VeSynci rakenduses kasutatav konto. Kahefaktorilist autentimist (2FA) ei toetata ja see tuleb keelata.",
+                "title": "Sisesta kasutajanimi ja salas\u00f5na"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Vett on v\u00e4he"
+            },
+            "water_tank_lifted": {
+                "name": "Veepaak on t\u00f5stetud"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automaatne",
+                            "normal": "Tavaline",
+                            "pet": "Lemmikloomad",
+                            "sleep": "Unere\u017eiim",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Niiskus"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Udu tase"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "\u00d6\u00f6valguse tase",
+                "state": {
+                    "bright": "Hele",
+                    "dim": "H\u00e4mar",
+                    "off": "V\u00e4ljas",
+                    "on": "Sees"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "\u00d5hu kvaliteet"
+            },
+            "cook_set_temp": {
+                "name": "K\u00fcpsetustemperatuuri seadistus"
+            },
+            "cook_set_time": {
+                "name": "K\u00fcpsetusaja seadistus"
+            },
+            "cook_status": {
+                "name": "Toiduvalmistamise olek",
+                "state": {
+                    "cooking": "Toiduvalmistamine",
+                    "cooking_end": "Toidu valmistamine l\u00f5petatud",
+                    "cooking_stop": "Toidu valmistamine peatatud",
+                    "heating": "Eelsoojendus",
+                    "preheat_end": "Eelsoojendamine l\u00f5petatud",
+                    "preheat_stop": "Eelsoojendus peatatud",
+                    "pull_out": "Sahtel v\u00e4lja t\u00f5mmatud",
+                    "standby": "Unere\u017eiimil"
+                }
+            },
+            "current_power": {
+                "name": "Praegune v\u00f5imsus"
+            },
+            "current_temp": {
+                "name": "Praegune temperatuur"
+            },
+            "current_voltage": {
+                "name": "Praegune pinge"
+            },
+            "energy_month": {
+                "name": "Energiatarbimine kuus"
+            },
+            "energy_today": {
+                "name": "Energiakasutus t\u00e4na"
+            },
+            "energy_week": {
+                "name": "Energiakasutus n\u00e4dalas"
+            },
+            "energy_year": {
+                "name": "Energiakasutus aastas"
+            },
+            "filter_life": {
+                "name": "Filtri kasutusiga"
+            },
+            "preheat_set_time": {
+                "name": "Eelsoojenduse seadistatud aeg"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Automaatne v\u00e4ljal\u00fclitus"
+            },
+            "child_lock": {
+                "name": "Lapselukk"
+            },
+            "display": {
+                "name": "Kuva"
+            },
+            "drying_mode_power_off": {
+                "name": "Kuivatusre\u017eiimi sissel\u00fclitamine kui seade on v\u00e4lja l\u00fclitatud"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Lisab Home Assistantile uued VeSynci seadmed.",
+            "name": "Seadmete v\u00e4rskendamine"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Wachtwurd"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "night_light_level": {
+                "state": {
+                    "on": "Oan"
+                }
+            }
+        }
+    }
+}

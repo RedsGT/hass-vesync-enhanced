@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u00da\u010det VeSync je u\u017e nakonfigurovan\u00fd",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9",
+            "wrong_account": "Konto, ktor\u00e9 sa pok\u00fa\u0161ate op\u00e4tovne overi\u0165, je in\u00e9 ako to, ktor\u00e9 je nakonfigurovan\u00e9"
+        },
+        "error": {
+            "api_response_error": "Chyba odpovede API",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "server_error": "Vyskytla sa chyba servera"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Email"
+                },
+                "data_description": {
+                    "password": "Heslo spojen\u00e9 s va\u0161\u00edm \u00fa\u010dtom VeSync",
+                    "username": "E-mailov\u00e1 adresa spojen\u00e1 s va\u0161\u00edm \u00fa\u010dtom VeSync"
+                },
+                "description": "Integr\u00e1cia VeSync potrebuje op\u00e4tovn\u00e9 overenie v\u00e1\u0161ho konta",
+                "title": "Vypr\u0161ala platnos\u0165 overenia pre {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Email"
+                },
+                "data_description": {
+                    "password": "Heslo spojen\u00e9 s va\u0161\u00edm \u00fa\u010dtom VeSync",
+                    "username": "E-mailov\u00e1 adresa spojen\u00e1 s va\u0161\u00edm \u00fa\u010dtom VeSync"
+                },
+                "description": "Zadajte \u00fa\u010det pou\u017e\u00edvan\u00fd v aplik\u00e1cii vesync. funkcia 2FA nie je podporovan\u00e1 a mus\u00ed by\u0165 vypnut\u00e1.",
+                "title": "Zadajte pou\u017e\u00edvate\u013esk\u00e9 meno a heslo"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "N\u00edzka hladina vody"
+            },
+            "water_tank_lifted": {
+                "name": "N\u00e1dr\u017e na vodu je zdvihnut\u00e1"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "normal": "Norm\u00e1lne",
+                            "pet": "Dom\u00e1ce zviera",
+                            "sleep": "Sp\u00e1nok",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Vlhkos\u0165"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "\u00darove\u0148 hmly"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "\u00darove\u0148 no\u010dn\u00e9ho osvetlenia",
+                "state": {
+                    "bright": "Svetl\u00fd",
+                    "dim": "Dim",
+                    "off": "Neakt\u00edvny",
+                    "on": "Akt\u00edvny"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Kvalita ovzdu\u0161ia"
+            },
+            "cook_set_temp": {
+                "name": "Nastaven\u00e1 teplota varenia"
+            },
+            "cook_set_time": {
+                "name": "\u010cas varenia nastaven\u00fd"
+            },
+            "cook_status": {
+                "name": "Stav varenia",
+                "state": {
+                    "cooking": "Varenie",
+                    "cooking_end": "Varenie dokon\u010den\u00e9",
+                    "cooking_stop": "Varenie zastaven\u00e9",
+                    "heating": "Predohrev",
+                    "preheat_end": "Predhrievanie dokon\u010den\u00e9",
+                    "preheat_stop": "Predhrievanie zastaven\u00e9",
+                    "pull_out": "Z\u00e1suvka vytiahnut\u00e1",
+                    "standby": "Pohotovostn\u00fd re\u017eim"
+                }
+            },
+            "current_power": {
+                "name": "Aktu\u00e1lny v\u00fdkon"
+            },
+            "current_temp": {
+                "name": "Aktu\u00e1lna teplota"
+            },
+            "current_voltage": {
+                "name": "Aktu\u00e1lne nap\u00e4tie"
+            },
+            "energy_month": {
+                "name": "Spotreba energie mesa\u010dne"
+            },
+            "energy_today": {
+                "name": "Spotreba energie dnes"
+            },
+            "energy_week": {
+                "name": "Spotreba energie t\u00fd\u017edenne"
+            },
+            "energy_year": {
+                "name": "Spotreba energie ro\u010dne"
+            },
+            "filter_life": {
+                "name": "\u017divotnos\u0165 filtra"
+            },
+            "preheat_set_time": {
+                "name": "Nastaven\u00fd \u010das predhrievania"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Automatick\u00e9 vypnutie"
+            },
+            "child_lock": {
+                "name": "Detsk\u00fd z\u00e1mok"
+            },
+            "display": {
+                "name": "Displej"
+            },
+            "drying_mode_power_off": {
+                "name": "Povolenie re\u017eimu su\u0161enia pri vypnutom nap\u00e1jan\u00ed"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Pridanie nov\u00fdch zariaden\u00ed VeSync do Home Assistant.",
+            "name": "Aktualiz\u00e1cia zariaden\u00ed"
+        }
+    }
+}

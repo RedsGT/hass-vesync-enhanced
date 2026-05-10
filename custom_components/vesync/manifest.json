@@ -1,0 +1,15 @@
+{
+  "domain": "vesync",
+  "name": "VeSync Enhanced",
+  "version": "0.1.0",
+  "codeowners": ["@RedsGT"],
+  "config_flow": true,
+  "dhcp": [{ "hostname": "levoit-*" }],
+  "documentation": "https://github.com/RedsGT/hass-vesync-enhanced",
+  "issue_tracker": "https://github.com/RedsGT/hass-vesync-enhanced/issues",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "loggers": ["pyvesync"],
+  "quality_scale": "bronze",
+  "requirements": ["pyvesync==3.4.1"]
+}

@@ -1,0 +1,15 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "Ugyldig godkendelse"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Adgangskode",
+                    "username": "Email"
+                }
+            }
+        }
+    }
+}

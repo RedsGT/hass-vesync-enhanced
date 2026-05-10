@@ -1,0 +1,15 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "Autentificare nevalid\u0103"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "username": "E-mail"
+                }
+            }
+        }
+    }
+}

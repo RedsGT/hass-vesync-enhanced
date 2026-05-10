@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u00da\u010det VeSync je ji\u017e nastaven",
+            "reauth_successful": "Op\u011btovn\u00e9 ov\u011b\u0159en\u00ed bylo \u00fasp\u011b\u0161n\u00e9",
+            "wrong_account": "\u00da\u010det, kter\u00fd se pokou\u0161\u00edte znovu ov\u011b\u0159it, se li\u0161\u00ed od nastaven\u00e9ho \u00fa\u010dtu."
+        },
+        "error": {
+            "api_response_error": "Chyba odpov\u011bdi API",
+            "invalid_auth": "Neplatn\u00e9 ov\u011b\u0159en\u00ed",
+            "server_error": "Do\u0161lo k chyb\u011b serveru"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "E-mail"
+                },
+                "data_description": {
+                    "password": "Heslo spojen\u00e9 s va\u0161\u00edm \u00fa\u010dtem VeSync",
+                    "username": "E-mailov\u00e1 adresa spojen\u00e1 s va\u0161\u00edm \u00fa\u010dtem VeSync"
+                },
+                "description": "Integrace VeSync pot\u0159ebuje znovu ov\u011b\u0159it v\u00e1\u0161 \u00fa\u010det",
+                "title": "Platnost ov\u011b\u0159en\u00ed pro {name} vypr\u0161ela"
+            },
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "E-mail"
+                },
+                "data_description": {
+                    "password": "Heslo spojen\u00e9 s va\u0161\u00edm \u00fa\u010dtem VeSync",
+                    "username": "E-mailov\u00e1 adresa spojen\u00e1 s va\u0161\u00edm \u00fa\u010dtem VeSync"
+                },
+                "description": "Zadejte \u00fa\u010det pou\u017e\u00edvan\u00fd v aplikaci VeSync. 2FA nen\u00ed podporov\u00e1no a je nutn\u00e9 jej zak\u00e1zat.",
+                "title": "Zadat u\u017eivatelsk\u00e9 jm\u00e9no a heslo"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "M\u00e1lo vody"
+            },
+            "water_tank_lifted": {
+                "name": "N\u00e1dr\u017e na vodu zvednut\u00e1"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automaticky",
+                            "normal": "Norm\u00e1ln\u00ed",
+                            "pet": "Mazl\u00ed\u010dek",
+                            "sleep": "Sp\u00e1nek",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Vlhkost"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "\u00darove\u0148 mlhy"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "\u00darove\u0148 no\u010dn\u00edho sv\u011btla",
+                "state": {
+                    "bright": "Jasn\u00fd",
+                    "dim": "Ztlumen\u00fd",
+                    "off": "Vypnuto",
+                    "on": "Zapnuto"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Kvalita vzduchu"
+            },
+            "cook_set_temp": {
+                "name": "Nastaven\u00e1 teplota va\u0159en\u00ed"
+            },
+            "cook_set_time": {
+                "name": "Nastaven\u00fd \u010das va\u0159en\u00ed"
+            },
+            "cook_status": {
+                "name": "Stav va\u0159en\u00ed",
+                "state": {
+                    "cooking": "Va\u0159en\u00ed",
+                    "cooking_end": "Va\u0159en\u00ed dokon\u010deno",
+                    "cooking_stop": "Va\u0159en\u00ed zastaveno",
+                    "heating": "P\u0159edeh\u0159ev",
+                    "preheat_end": "P\u0159edeh\u0159ev dokon\u010den",
+                    "preheat_stop": "P\u0159edeh\u0159ev zastaven",
+                    "pull_out": "Z\u00e1suvka vysunuta",
+                    "standby": "P\u0159ipraveno"
+                }
+            },
+            "current_power": {
+                "name": "Aktu\u00e1ln\u00ed v\u00fdkon"
+            },
+            "current_temp": {
+                "name": "Aktu\u00e1ln\u00ed teplota"
+            },
+            "current_voltage": {
+                "name": "Aktu\u00e1ln\u00ed nap\u011bt\u00ed"
+            },
+            "energy_month": {
+                "name": "M\u011bs\u00ed\u010dn\u00ed spot\u0159eba energie"
+            },
+            "energy_today": {
+                "name": "Dne\u0161n\u00ed spot\u0159eba energie"
+            },
+            "energy_week": {
+                "name": "T\u00fddenn\u00ed spot\u0159eba energie"
+            },
+            "energy_year": {
+                "name": "Ro\u010dn\u00ed spot\u0159eba energie"
+            },
+            "filter_life": {
+                "name": "\u017divotnost filtru"
+            },
+            "preheat_set_time": {
+                "name": "Nastaven\u00fd \u010das p\u0159edeh\u0159evu"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Automaticky vypnout"
+            },
+            "child_lock": {
+                "name": "D\u011btsk\u00e1 pojistka"
+            },
+            "display": {
+                "name": "Displej"
+            },
+            "drying_mode_power_off": {
+                "name": "Povolit re\u017eim su\u0161en\u00ed, kdy\u017e je nap\u00e1jen\u00ed vypnut\u00e9"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "P\u0159id\u00e1 nov\u00e1 za\u0159\u00edzen\u00ed VeSync do Home Assistanta.",
+            "name": "Aktualizovat za\u0159\u00edzen\u00ed"
+        }
+    }
+}

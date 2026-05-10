@@ -1,0 +1,102 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Herauthenticatie geslaagd"
+        },
+        "error": {
+            "invalid_auth": "Ongeldige authenticatie"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "username": "E-mail"
+                },
+                "description": "De VeSync-integratie moet je account opnieuw verifi\u00ebren",
+                "title": "Authenticatie is verlopen voor {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "username": "E-mail"
+                },
+                "title": "Voer gebruikersnaam en wachtwoord in"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Laag water"
+            },
+            "water_tank_lifted": {
+                "name": "Watertank opgetild"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatisch",
+                            "normal": "Normaal"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Nevelniveau"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Nachtlicht-niveau",
+                "state": {
+                    "bright": "Helder",
+                    "dim": "Dim",
+                    "off": "Uit",
+                    "on": "Aan"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Luchtkwaliteit"
+            },
+            "cook_status": {
+                "state": {
+                    "standby": "Stand-by"
+                }
+            },
+            "current_power": {
+                "name": "Huidig vermogen"
+            },
+            "current_voltage": {
+                "name": "Spanning"
+            },
+            "energy_month": {
+                "name": "Energieverbruik maandelijks"
+            },
+            "energy_today": {
+                "name": "Energieverbruik vandaag"
+            },
+            "energy_week": {
+                "name": "Energieverbruik wekelijks"
+            },
+            "energy_year": {
+                "name": "Energieverbruik jaarlijks"
+            },
+            "filter_life": {
+                "name": "Filter levensduur"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Voegt nieuwe VeSync apparaten toe aan Home Assistant.",
+            "name": "Bijwerken apparaten"
+        }
+    }
+}

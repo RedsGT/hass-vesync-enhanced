@@ -1,0 +1,49 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "Virheellinen todennus"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "S\u00e4hk\u00f6posti"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "air_quality": {
+                "name": "Ilmanlaatu"
+            },
+            "current_power": {
+                "name": "Nykyinen teho"
+            },
+            "current_voltage": {
+                "name": "Nykyinen j\u00e4nnite"
+            },
+            "energy_month": {
+                "name": "Energian k\u00e4ytt\u00f6 kuukausittain"
+            },
+            "energy_today": {
+                "name": "Energian k\u00e4ytt\u00f6 t\u00e4n\u00e4\u00e4n"
+            },
+            "energy_week": {
+                "name": "Energian k\u00e4ytt\u00f6 viikoittain"
+            },
+            "energy_year": {
+                "name": "Energian k\u00e4ytt\u00f6 vuosittain"
+            },
+            "filter_life": {
+                "name": "Suodattimen k\u00e4ytt\u00f6ik\u00e4"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Lis\u00e4\u00e4 uusia VeSync-laitteita Home Assistantiin.",
+            "name": "P\u00e4ivit\u00e4 laitteet"
+        }
+    }
+}

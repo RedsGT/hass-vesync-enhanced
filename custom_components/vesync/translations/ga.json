@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "T\u00e1 cuntas VeSync cumraithe cheana f\u00e9in",
+            "reauth_successful": "D'\u00e9irigh leis an athfh\u00edordheimhni\u00fa",
+            "wrong_account": "T\u00e1 an cuntas at\u00e1 t\u00fa ag iarraidh a athfh\u00edordheimhni\u00fa difri\u00fail \u00f3n gceann at\u00e1 cumraithe"
+        },
+        "error": {
+            "api_response_error": "Earr\u00e1id freagartha API",
+            "invalid_auth": "F\u00edordheimhni\u00fa neamhbhail\u00ed",
+            "server_error": "Tharla earr\u00e1id freastala\u00ed"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Pasfhocal",
+                    "username": "R\u00edomhphost"
+                },
+                "data_description": {
+                    "password": "Pasfhocal at\u00e1 nasctha le do chuntas VeSync",
+                    "username": "Seoladh r\u00edomhphoist a bhaineann le do chuntas VeSync"
+                },
+                "description": "Caithfidh an comhth\u00e1th\u00fa VeSync do chuntas a athfh\u00edordheimhni\u00fa",
+                "title": "T\u00e1 an f\u00edordheimhni\u00fa imithe in \u00e9ag do {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Pasfhocal",
+                    "username": "R\u00edomhphost"
+                },
+                "data_description": {
+                    "password": "Pasfhocal at\u00e1 nasctha le do chuntas VeSync",
+                    "username": "Seoladh r\u00edomhphoist a bhaineann le do chuntas VeSync"
+                },
+                "description": "Cuir isteach an cuntas a \u00fas\u00e1idtear san aip vesync. N\u00ed thaca\u00edtear le 2FA agus n\u00ed m\u00f3r \u00e9 a dh\u00edchumas\u00fa.",
+                "title": "Cuir isteach ainm \u00fas\u00e1ideora agus pasfhocal"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Uisce \u00edseal"
+            },
+            "water_tank_lifted": {
+                "name": "Umar uisce ardaithe"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Uath",
+                            "normal": "Gn\u00e1th",
+                            "pet": "Peata",
+                            "sleep": "Codladh",
+                            "turbo": "Turb\u00f3"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Taise"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Leibh\u00e9al ceo"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Leibh\u00e9al solais o\u00edche",
+                "state": {
+                    "bright": "Geal",
+                    "dim": "Laghdaigh",
+                    "off": "As",
+                    "on": "Ar si\u00fal"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "C\u00e1il\u00edocht an aeir"
+            },
+            "cook_set_temp": {
+                "name": "Teocht socraithe c\u00f3caireachta"
+            },
+            "cook_set_time": {
+                "name": "Am socraithe c\u00f3caireachta"
+            },
+            "cook_status": {
+                "name": "St\u00e1das c\u00f3caireachta",
+                "state": {
+                    "cooking": "C\u00f3caireacht",
+                    "cooking_end": "C\u00f3caireacht cr\u00edochnaithe",
+                    "cooking_stop": "C\u00f3caireacht stoptha",
+                    "heating": "R\u00e9amhth\u00e9amh",
+                    "preheat_end": "R\u00e9amhth\u00e9amh cr\u00edochnaithe",
+                    "preheat_stop": "Stopadh r\u00e9amhth\u00e9amh",
+                    "pull_out": "Tarraice\u00e1n tarraingthe amach",
+                    "standby": "Fuireachas"
+                }
+            },
+            "current_power": {
+                "name": "Cumhacht reatha"
+            },
+            "current_temp": {
+                "name": "Teocht reatha"
+            },
+            "current_voltage": {
+                "name": "Voltas reatha"
+            },
+            "energy_month": {
+                "name": "\u00das\u00e1id fuinnimh m\u00edos\u00fail"
+            },
+            "energy_today": {
+                "name": "\u00das\u00e1id fuinnimh inniu"
+            },
+            "energy_week": {
+                "name": "\u00das\u00e1id fuinnimh seachtaini\u00fail"
+            },
+            "energy_year": {
+                "name": "\u00das\u00e1id fuinnimh bliant\u00fail"
+            },
+            "filter_life": {
+                "name": "Saolr\u00e9 an scagaire"
+            },
+            "preheat_set_time": {
+                "name": "Am socraithe r\u00e9amhth\u00e9ite"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "M\u00fachadh Uathoibr\u00edoch"
+            },
+            "child_lock": {
+                "name": "Glas leana\u00ed"
+            },
+            "display": {
+                "name": "Taispe\u00e1in"
+            },
+            "drying_mode_power_off": {
+                "name": "Cumasaigh m\u00f3d triom\u00fach\u00e1in agus an chumhacht m\u00fachta"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Cuireann s\u00e9 gl\u00e9asanna VeSync nua le Home Assistant.",
+            "name": "Nuashonraigh gl\u00e9asanna"
+        }
+    }
+}

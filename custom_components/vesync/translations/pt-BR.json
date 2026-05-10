@@ -1,0 +1,130 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "A reautentica\u00e7\u00e3o foi bem-sucedida"
+        },
+        "error": {
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Senha",
+                    "username": "E-mail"
+                },
+                "data_description": {
+                    "password": "Senha associada \u00e0 sua conta VeSync",
+                    "username": "O endere\u00e7o de e-mail associado \u00e0 sua conta VeSync"
+                },
+                "description": "A integra\u00e7\u00e3o do vesync precisa reautenticar sua conta"
+            },
+            "user": {
+                "data": {
+                    "password": "Senha",
+                    "username": "Email"
+                },
+                "data_description": {
+                    "password": "Senha associada \u00e0 sua conta VeSync",
+                    "username": "O endere\u00e7o de e-mail associado \u00e0 sua conta VeSync"
+                },
+                "description": "Insira a conta usada no aplicativo vesync. A autentica\u00e7\u00e3o de dois fatores (2FA) n\u00e3o \u00e9 compat\u00edvel e deve ser desativada."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Pouca \u00e1gua"
+            },
+            "water_tank_lifted": {
+                "name": "Tanque de \u00e1gua levantado"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "pet": "Animal de estima\u00e7\u00e3o",
+                            "sleep": "Sono",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "N\u00edvel de n\u00e9voa"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "N\u00edvel de luz noturna",
+                "state": {
+                    "bright": "Brilhante",
+                    "dim": "Desligado"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Qualidade do ar"
+            },
+            "cook_set_temp": {
+                "name": "Definir temperatura de cozimento"
+            },
+            "cook_set_time": {
+                "name": "Definir tempo de cozimento"
+            },
+            "cook_status": {
+                "name": "Status de cozimento",
+                "state": {
+                    "cooking": "Cozimento",
+                    "cooking_end": "Cozimento conclu\u00eddo",
+                    "cooking_stop": "Cozimento parado",
+                    "heating": "Pr\u00e9-aquecimento",
+                    "preheat_end": "Pr\u00e9-aquecimento conclu\u00eddo",
+                    "preheat_stop": "Pr\u00e9-aquecimento parado",
+                    "pull_out": "Gaveta aberta",
+                    "standby": "Em espera"
+                }
+            },
+            "current_power": {
+                "name": "Pot\u00eancia atual"
+            },
+            "current_temp": {
+                "name": "Temperatura atual"
+            },
+            "current_voltage": {
+                "name": "Tens\u00e3o atual"
+            },
+            "energy_month": {
+                "name": "Uso de energia mensal"
+            },
+            "energy_today": {
+                "name": "Uso de energia hoje"
+            },
+            "energy_week": {
+                "name": "Uso de energia semanal"
+            },
+            "energy_year": {
+                "name": "Uso de energia anual"
+            },
+            "filter_life": {
+                "name": "Vida \u00fatil do filtro"
+            },
+            "preheat_set_time": {
+                "name": "Definir tempo de pr\u00e9-aquecimento"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Desligamento autom\u00e1tico"
+            },
+            "display": {
+                "name": "Exibi\u00e7\u00e3o"
+            }
+        }
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSync \u5e33\u865f\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210",
+            "reauth_successful": "\u91cd\u65b0\u8a8d\u8b49\u6210\u529f",
+            "wrong_account": "\u5617\u8a66\u91cd\u65b0\u9a57\u8b49\u7684\u5e33\u865f\u8207\u539f\u8a2d\u5b9a\u5e33\u865f\u4e0d\u540c"
+        },
+        "error": {
+            "api_response_error": "API \u56de\u61c9\u932f\u8aa4",
+            "invalid_auth": "\u8eab\u4efd\u9a57\u8b49\u7121\u6548",
+            "server_error": "\u4f3a\u670d\u5668\u767c\u751f\u932f\u8aa4"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "username": "\u96fb\u5b50\u90f5\u4ef6"
+                },
+                "data_description": {
+                    "password": "\u8207 VeSync \u5e33\u865f\u95dc\u806f\u7684\u5bc6\u78bc",
+                    "username": "\u8207 VeSync \u5e33\u865f\u95dc\u806f\u7684\u96fb\u5b50\u90f5\u4ef6\u4f4d\u5740"
+                },
+                "description": "VeSync \u6574\u5408\u9700\u8981\u91cd\u65b0\u9a57\u8b49\u60a8\u7684\u5e33\u865f\u3002",
+                "title": "{name} \u8a8d\u8b49\u5df2\u904e\u671f"
+            },
+            "user": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "username": "\u96fb\u5b50\u90f5\u4ef6"
+                },
+                "data_description": {
+                    "password": "\u8207 VeSync \u5e33\u865f\u95dc\u806f\u7684\u5bc6\u78bc",
+                    "username": "\u8207 VeSync \u5e33\u865f\u95dc\u806f\u7684\u96fb\u5b50\u90f5\u4ef6\u4f4d\u5740"
+                },
+                "description": "\u8f38\u5165 vesync \u61c9\u7528\u7a0b\u5f0f\u4e2d\u4f7f\u7528\u7684\u5e33\u865f\u3002\u4e0d\u652f\u63f4\u96d9\u91cd\u9a57\u8b49\uff0c\u5fc5\u9808\u95dc\u9589\u6b64\u529f\u80fd\u3002",
+                "title": "\u8acb\u8f38\u5165\u4f7f\u7528\u8005\u540d\u7a31\u8207\u5bc6\u78bc"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "\u4f4e\u6c34\u4f4d"
+            },
+            "water_tank_lifted": {
+                "name": "\u6c34\u69fd\u5df2\u53d6\u51fa"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "\u81ea\u52d5",
+                            "normal": "\u6b63\u5e38",
+                            "pet": "\u5bf5\u7269",
+                            "sleep": "\u7761\u7720",
+                            "turbo": "\u5168\u901f"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "\u6fd5\u5ea6"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "\u9727\u5ea6"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "\u591c\u71c8\u4eae\u5ea6",
+                "state": {
+                    "bright": "\u4eae\u5149",
+                    "dim": "\u5fae\u5149",
+                    "off": "\u95dc\u9589",
+                    "on": "\u958b\u555f"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "\u7a7a\u6c23\u54c1\u8cea"
+            },
+            "cook_set_temp": {
+                "name": "\u70f9\u98ea\u8a2d\u5b9a\u6eab\u5ea6"
+            },
+            "cook_set_time": {
+                "name": "\u70f9\u98ea\u8a2d\u5b9a\u6642\u9593"
+            },
+            "cook_status": {
+                "name": "\u70f9\u98ea\u72c0\u614b",
+                "state": {
+                    "cooking": "\u70f9\u996a\u4e2d",
+                    "cooking_end": "\u70f9\u98ea\u5b8c\u6210",
+                    "cooking_stop": "\u70f9\u98ea\u5df2\u505c\u6b62",
+                    "heating": "\u9810\u71b1\u4e2d",
+                    "preheat_end": "\u9810\u71b1\u5b8c\u6210",
+                    "preheat_stop": "\u9810\u71b1\u5df2\u505c\u6b62",
+                    "pull_out": "\u70f9\u98ea\u76d2\u53d6\u51fa",
+                    "standby": "\u5f85\u547d"
+                }
+            },
+            "current_power": {
+                "name": "\u96fb\u6d41\u529f\u7387"
+            },
+            "current_temp": {
+                "name": "\u76ee\u524d\u6eab\u5ea6"
+            },
+            "current_voltage": {
+                "name": "\u76ee\u524d\u96fb\u58d3"
+            },
+            "energy_month": {
+                "name": "\u6708\u80fd\u6e90\u7528\u91cf"
+            },
+            "energy_today": {
+                "name": "\u4eca\u65e5\u80fd\u6e90\u7528\u91cf"
+            },
+            "energy_week": {
+                "name": "\u9031\u80fd\u6e90\u7528\u91cf"
+            },
+            "energy_year": {
+                "name": "\u5e74\u80fd\u6e90\u7528\u91cf"
+            },
+            "filter_life": {
+                "name": "\u904e\u6ffe\u5668\u58fd\u547d"
+            },
+            "preheat_set_time": {
+                "name": "\u9810\u71b1\u8a2d\u5b9a\u6642\u9593"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "\u81ea\u52d5\u95dc\u9589"
+            },
+            "child_lock": {
+                "name": "\u5152\u7ae5\u9396"
+            },
+            "display": {
+                "name": "\u986f\u793a"
+            },
+            "drying_mode_power_off": {
+                "name": "\u95dc\u6a5f\u6642\u958b\u555f\u70d8\u4e7e\u6a21\u5f0f"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "\u65b0\u589e VeSync \u88dd\u7f6e\u81f3 Home Assistant\u3002",
+            "name": "\u66f4\u65b0\u88dd\u7f6e"
+        }
+    }
+}

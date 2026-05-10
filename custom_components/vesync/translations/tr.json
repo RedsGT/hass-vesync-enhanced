@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSync hesab\u0131 zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "reauth_successful": "Yeniden kimlik do\u011frulama ba\u015far\u0131l\u0131 oldu",
+            "wrong_account": "Yeniden kimlik do\u011frulamas\u0131 yapmaya \u00e7al\u0131\u015ft\u0131\u011f\u0131n\u0131z hesap yap\u0131land\u0131r\u0131lm\u0131\u015f olandan farkl\u0131"
+        },
+        "error": {
+            "api_response_error": "API yan\u0131t hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "server_error": "Sunucu hatas\u0131 olu\u015ftu"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "\u015eifre",
+                    "username": "E-posta"
+                },
+                "data_description": {
+                    "password": "VeSync hesab\u0131n\u0131zla ili\u015fkili parola",
+                    "username": "VeSync hesab\u0131n\u0131zla ili\u015fkili e-posta adresi"
+                },
+                "description": "VeSync entegrasyonunun hesab\u0131n\u0131z\u0131 yeniden do\u011frulamas\u0131 gerekiyor",
+                "title": "{name} i\u00e7in kimlik do\u011frulaman\u0131n s\u00fcresi doldu"
+            },
+            "user": {
+                "data": {
+                    "password": "\u015eifre",
+                    "username": "E-posta"
+                },
+                "data_description": {
+                    "password": "VeSync hesab\u0131n\u0131zla ili\u015fkili parola",
+                    "username": "VeSync hesab\u0131n\u0131zla ili\u015fkili e-posta adresi"
+                },
+                "description": "Vesync uygulamas\u0131nda kullan\u0131lan hesab\u0131 girin. 2FA desteklenmez ve devre d\u0131\u015f\u0131 b\u0131rak\u0131lmal\u0131d\u0131r.",
+                "title": "Kullan\u0131c\u0131 ad\u0131n\u0131z\u0131 ve \u015fifrenizi girin"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "D\u00fc\u015f\u00fck su"
+            },
+            "water_tank_lifted": {
+                "name": "Su tank\u0131 kald\u0131r\u0131ld\u0131"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Otomatik",
+                            "normal": "Normal",
+                            "pet": "Evcil hayvan",
+                            "sleep": "Uyku",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Nem"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Sis seviyesi"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Gece \u0131\u015f\u0131k seviyesi",
+                "state": {
+                    "bright": "Ayd\u0131nl\u0131k",
+                    "dim": "Dim",
+                    "off": "Kapal\u0131",
+                    "on": "A\u00e7\u0131k"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Hava kalitesi"
+            },
+            "cook_set_temp": {
+                "name": "Pi\u015firme s\u0131cakl\u0131\u011f\u0131 ayar\u0131"
+            },
+            "cook_set_time": {
+                "name": "Pi\u015firme ayar s\u00fcresi"
+            },
+            "cook_status": {
+                "name": "Pi\u015firme durumu",
+                "state": {
+                    "cooking": "Pi\u015fiyor",
+                    "cooking_end": "Pi\u015firme tamamland\u0131",
+                    "cooking_stop": "Yemek pi\u015firme durduruldu",
+                    "heating": "\u00d6n \u0131s\u0131tma",
+                    "preheat_end": "\u00d6n \u0131s\u0131tma tamamland\u0131",
+                    "preheat_stop": "\u00d6n \u0131s\u0131tma durduruldu",
+                    "pull_out": "\u00c7ekmece d\u0131\u015far\u0131 \u00e7ekildi",
+                    "standby": "Bekleme modu"
+                }
+            },
+            "current_power": {
+                "name": "Mevcut g\u00fc\u00e7"
+            },
+            "current_temp": {
+                "name": "Mevcut s\u0131cakl\u0131k"
+            },
+            "current_voltage": {
+                "name": "Mevcut voltaj"
+            },
+            "energy_month": {
+                "name": "Ayl\u0131k enerji kullan\u0131m\u0131"
+            },
+            "energy_today": {
+                "name": "Bug\u00fcn enerji kullan\u0131m\u0131"
+            },
+            "energy_week": {
+                "name": "Haftal\u0131k enerji kullan\u0131m\u0131"
+            },
+            "energy_year": {
+                "name": "Y\u0131ll\u0131k enerji kullan\u0131m\u0131"
+            },
+            "filter_life": {
+                "name": "Filtre \u00f6mr\u00fc"
+            },
+            "preheat_set_time": {
+                "name": "\u00d6n \u0131s\u0131tma ayar s\u00fcresi"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Otomatik Kapal\u0131"
+            },
+            "child_lock": {
+                "name": "\u00c7ocuk kilidi"
+            },
+            "display": {
+                "name": "Ekran"
+            },
+            "drying_mode_power_off": {
+                "name": "G\u00fc\u00e7 kapal\u0131yken kurutma modunu etkinle\u015ftirin"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Home Assistant'a yeni VeSync cihazlar\u0131 ekler.",
+            "name": "Cihazlar\u0131 g\u00fcncelle"
+        }
+    }
+}

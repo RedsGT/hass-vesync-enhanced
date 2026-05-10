@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "La cuenta VeSync ya est\u00e1 configurada",
+            "reauth_successful": "La autenticaci\u00f3n se volvi\u00f3 a realizar correctamente",
+            "wrong_account": "La cuenta que est\u00e1s intentando volver a autenticar es diferente de la que est\u00e1 configurada"
+        },
+        "error": {
+            "api_response_error": "Error de respuesta de la API",
+            "invalid_auth": "Autenticaci\u00f3n no v\u00e1lida",
+            "server_error": "Se produjo un error en el servidor"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Contrase\u00f1a",
+                    "username": "Correo electr\u00f3nico"
+                },
+                "data_description": {
+                    "password": "Contrase\u00f1a asociada a tu cuenta VeSync",
+                    "username": "Direcci\u00f3n de correo electr\u00f3nico asociada a tu cuenta VeSync"
+                },
+                "description": "La integraci\u00f3n de VeSync necesita volver a autenticar tu cuenta",
+                "title": "Autenticaci\u00f3n caducada para {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Contrase\u00f1a",
+                    "username": "Correo electr\u00f3nico"
+                },
+                "data_description": {
+                    "password": "Contrase\u00f1a asociada a tu cuenta VeSync",
+                    "username": "Direcci\u00f3n de correo electr\u00f3nico asociada a tu cuenta VeSync"
+                },
+                "description": "Introduce la cuenta utilizada en la aplicaci\u00f3n vesync. 2FA no es compatible y debe deshabilitarse.",
+                "title": "Introducir nombre de usuario y contrase\u00f1a"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Agua baja"
+            },
+            "water_tank_lifted": {
+                "name": "Dep\u00f3sito de agua elevado"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "normal": "Normal",
+                            "pet": "Mascota",
+                            "sleep": "Reposo",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Humedad"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Nivel de niebla"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Nivel de luz nocturna",
+                "state": {
+                    "bright": "Brillante",
+                    "dim": "Atenuado",
+                    "off": "Apagado",
+                    "on": "Encendido"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Calidad del aire"
+            },
+            "cook_set_temp": {
+                "name": "Temperatura de cocci\u00f3n establecida"
+            },
+            "cook_set_time": {
+                "name": "Tiempo de cocci\u00f3n establecido"
+            },
+            "cook_status": {
+                "name": "Estado de cocci\u00f3n",
+                "state": {
+                    "cooking": "Cocinando",
+                    "cooking_end": "Cocci\u00f3n terminada",
+                    "cooking_stop": "Cocci\u00f3n detenida",
+                    "heating": "Precalentamiento",
+                    "preheat_end": "Precalentamiento terminado",
+                    "preheat_stop": "Precalentamiento detenido",
+                    "pull_out": "Caj\u00f3n extra\u00eddo",
+                    "standby": "En espera"
+                }
+            },
+            "current_power": {
+                "name": "Potencia actual"
+            },
+            "current_temp": {
+                "name": "Temperatura actual"
+            },
+            "current_voltage": {
+                "name": "Tensi\u00f3n actual"
+            },
+            "energy_month": {
+                "name": "Consumo mensual de energ\u00eda"
+            },
+            "energy_today": {
+                "name": "Consumo de energ\u00eda hoy"
+            },
+            "energy_week": {
+                "name": "Consumo semanal de energ\u00eda"
+            },
+            "energy_year": {
+                "name": "Consumo anual de energ\u00eda"
+            },
+            "filter_life": {
+                "name": "Vida \u00fatil del filtro"
+            },
+            "preheat_set_time": {
+                "name": "Tiempo de precalentamiento establecido"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Apagado autom\u00e1tico"
+            },
+            "child_lock": {
+                "name": "Bloqueo infantil"
+            },
+            "display": {
+                "name": "Pantalla"
+            },
+            "drying_mode_power_off": {
+                "name": "Habilitar el modo de secado con la alimentaci\u00f3n desconectada"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "A\u00f1ade nuevos dispositivos VeSync a Home Assistant.",
+            "name": "Actualizar dispositivos"
+        }
+    }
+}

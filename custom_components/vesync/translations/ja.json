@@ -1,0 +1,143 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "\u518d\u8a8d\u8a3c\u306b\u6210\u529f\u3057\u307e\u3057\u305f"
+        },
+        "error": {
+            "api_response_error": "API\u5fdc\u7b54\u30a8\u30e9\u30fc",
+            "invalid_auth": "\u7121\u52b9\u306a\u8a8d\u8a3c",
+            "server_error": "\u30b5\u30fc\u30d0\u30fc\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "E\u30e1\u30fc\u30eb"
+                },
+                "data_description": {
+                    "password": "VeSync\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u95a2\u9023\u4ed8\u3051\u3089\u308c\u305f\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "VeSync\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u95a2\u9023\u4ed8\u3051\u3089\u308c\u305f\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9"
+                },
+                "description": "VeSync\u7d71\u5408\u3067\u306f\u30a2\u30ab\u30a6\u30f3\u30c8\u306e\u518d\u8a8d\u8a3c\u304c\u5fc5\u8981\u3067\u3059",
+                "title": "{name} \u306e\u8a8d\u8a3c\u306e\u6709\u52b9\u671f\u9650\u304c\u5207\u308c\u307e\u3057\u305f"
+            },
+            "user": {
+                "data": {
+                    "password": "\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "E\u30e1\u30fc\u30eb"
+                },
+                "data_description": {
+                    "password": "VeSync\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u95a2\u9023\u4ed8\u3051\u3089\u308c\u305f\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "VeSync\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u95a2\u9023\u4ed8\u3051\u3089\u308c\u305f\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9"
+                },
+                "description": "vesync \u30a2\u30d7\u30ea\u3067\u4f7f\u7528\u3055\u308c\u3066\u3044\u308b\u30a2\u30ab\u30a6\u30f3\u30c8\u3092\u5165\u529b\u3057\u307e\u3059\u30022FA \u306f\u30b5\u30dd\u30fc\u30c8\u3055\u308c\u3066\u3044\u306a\u3044\u305f\u3081\u3001\u7121\u52b9\u306b\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002",
+                "title": "\u30e6\u30fc\u30b6\u30fc\u540d\u3068\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "\u4f4e\u6c34\u4f4d"
+            },
+            "water_tank_lifted": {
+                "name": "\u6c34\u30bf\u30f3\u30af\u3092\u6301\u3061\u4e0a\u3052\u305f"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "normal": "\u30ce\u30fc\u30de\u30eb",
+                            "pet": "\u30da\u30c3\u30c8",
+                            "sleep": "\u30b9\u30ea\u30fc\u30d7",
+                            "turbo": "\u30bf\u30fc\u30dc"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "\u30df\u30b9\u30c8\u30ec\u30d9\u30eb"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "\u591c\u9593\u7167\u660e\u30ec\u30d9\u30eb",
+                "state": {
+                    "bright": "\u660e\u308b\u3044",
+                    "dim": "\u8584\u6697\u3044",
+                    "off": "\u30aa\u30d5",
+                    "on": "\u30aa\u30f3"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "\u7a7a\u6c17\u306e\u8cea"
+            },
+            "cook_set_temp": {
+                "name": "\u8abf\u7406\u8a2d\u5b9a\u6e29\u5ea6"
+            },
+            "cook_set_time": {
+                "name": "\u8abf\u7406\u8a2d\u5b9a\u6642\u9593"
+            },
+            "cook_status": {
+                "name": "\u8abf\u7406\u72b6\u6cc1",
+                "state": {
+                    "cooking": "\u6599\u7406\u4e2d",
+                    "cooking_end": "\u8abf\u7406\u5b8c\u4e86",
+                    "cooking_stop": "\u8abf\u7406\u304c\u6b62\u307e\u3063\u305f",
+                    "heating": "\u4e88\u71b1",
+                    "preheat_end": "\u4e88\u71b1\u5b8c\u4e86",
+                    "preheat_stop": "\u4e88\u71b1\u505c\u6b62",
+                    "pull_out": "\u5f15\u304d\u51fa\u3057\u3092\u5f15\u304d\u51fa\u3057\u305f",
+                    "standby": "\u30b9\u30bf\u30f3\u30d0\u30a4"
+                }
+            },
+            "current_power": {
+                "name": "\u73fe\u5728\u306e\u96fb\u529b"
+            },
+            "current_temp": {
+                "name": "\u73fe\u5728\u306e\u6e29\u5ea6"
+            },
+            "current_voltage": {
+                "name": "\u73fe\u5728\u306e\u96fb\u5727"
+            },
+            "energy_month": {
+                "name": "\u6708\u9593\u306e\u30a8\u30cd\u30eb\u30ae\u30fc\u4f7f\u7528\u91cf"
+            },
+            "energy_today": {
+                "name": "\u4eca\u65e5\u306e\u30a8\u30cd\u30eb\u30ae\u30fc\u4f7f\u7528\u91cf"
+            },
+            "energy_week": {
+                "name": "\u9031\u9593\u30a8\u30cd\u30eb\u30ae\u30fc\u4f7f\u7528\u91cf"
+            },
+            "energy_year": {
+                "name": "\u5e74\u9593\u30a8\u30cd\u30eb\u30ae\u30fc\u4f7f\u7528\u91cf"
+            },
+            "filter_life": {
+                "name": "\u30d5\u30a3\u30eb\u30bf\u30fc\u306e\u5bff\u547d"
+            },
+            "preheat_set_time": {
+                "name": "\u4e88\u71b1\u8a2d\u5b9a\u6642\u9593"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "\u81ea\u52d5\u30aa\u30d5"
+            },
+            "display": {
+                "name": "\u30c7\u30a3\u30b9\u30d7\u30ec\u30a4"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "\u65b0\u3057\u3044VeSync\u30c7\u30d0\u30a4\u30b9\u3092Home Assistant\u306b\u8ffd\u52a0\u3057\u307e\u3059\u3002",
+            "name": "\u30c7\u30d0\u30a4\u30b9\u3092\u66f4\u65b0\u3059\u308b"
+        }
+    }
+}

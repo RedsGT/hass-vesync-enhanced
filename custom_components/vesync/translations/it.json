@@ -1,0 +1,129 @@
+{
+    "config": {
+        "error": {
+            "api_response_error": "Errore di risposta API",
+            "invalid_auth": "Autenticazione non valida",
+            "server_error": "Si \u00e8 verificato un errore del server"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "password": "Password associata al tuo account VeSync",
+                    "username": "Indirizzo email associato al tuo account VeSync"
+                }
+            },
+            "user": {
+                "data": {
+                    "password": "Password",
+                    "username": "E-mail"
+                },
+                "data_description": {
+                    "password": "Password associata al tuo account VeSync",
+                    "username": "Indirizzo email associato al tuo account VeSync"
+                },
+                "description": "Inserisci l'account utilizzato nell'app VeSync. L'autenticazione a due fattori non \u00e8 supportata e deve essere disattivata."
+            }
+        }
+    },
+    "entity": {
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatico",
+                            "normal": "Normale"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Umidit\u00e0"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "state": {
+                    "off": "Spento",
+                    "on": "Acceso"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Qualit\u00e0 dell'aria"
+            },
+            "cook_set_temp": {
+                "name": "Temperatura di cottura impostata"
+            },
+            "cook_set_time": {
+                "name": "Tempo di cottura impostato"
+            },
+            "cook_status": {
+                "name": "Stato di cottura",
+                "state": {
+                    "cooking": "In cottura",
+                    "cooking_end": "Cottura terminata",
+                    "cooking_stop": "Cottura interrotta",
+                    "heating": "Preriscaldamento",
+                    "preheat_end": "Preriscaldamento completato",
+                    "preheat_stop": "Preriscaldamento interrotto",
+                    "pull_out": "Cassetto estratto",
+                    "standby": "In attesa"
+                }
+            },
+            "current_power": {
+                "name": "Potenza attuale"
+            },
+            "current_temp": {
+                "name": "Temperatura attuale"
+            },
+            "current_voltage": {
+                "name": "Tensione attuale"
+            },
+            "energy_month": {
+                "name": "Consumo energetico mensile"
+            },
+            "energy_today": {
+                "name": "Consumo energetico odierno"
+            },
+            "energy_week": {
+                "name": "Consumo energetico settimanale"
+            },
+            "energy_year": {
+                "name": "Consumo energetico annuale"
+            },
+            "filter_life": {
+                "name": "Durata del filtro"
+            },
+            "preheat_set_time": {
+                "name": "Tempo di preriscaldamento impostato"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Spegnimento automatico"
+            },
+            "child_lock": {
+                "name": "Blocco bambini"
+            },
+            "drying_mode_power_off": {
+                "name": "Abilita la modalit\u00e0 di asciugatura quando l'alimentazione \u00e8 spenta"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Aggiunge nuovi dispositivi VeSync a Home Assistant.",
+            "name": "Aggiorna i dispositivi"
+        }
+    }
+}

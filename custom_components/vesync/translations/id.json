@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Autentikasi ulang berhasil"
+        },
+        "error": {
+            "invalid_auth": "Autentikasi tidak valid"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Kata Sandi",
+                    "username": "Email"
+                },
+                "title": "Autentikasi ulang integrasi untuk {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Kata Sandi",
+                    "username": "Email"
+                }
+            }
+        }
+    },
+    "entity": {
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Otomatis"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "state": {
+                    "off": "Mati",
+                    "on": "Nyala"
+                }
+            }
+        }
+    }
+}

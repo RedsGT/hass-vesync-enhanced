@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "error": {
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "E-po\u0161tni naslov"
+                },
+                "title": "Preverjanje pristnosti za {name} je poteklo"
+            },
+            "user": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "E-po\u0161tni naslov"
+                },
+                "title": "Vnesite uporabni\u0161ko Ime in geslo"
+            }
+        }
+    },
+    "entity": {
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Samodejno"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "state": {
+                    "off": "Izklopljeno"
+                }
+            }
+        }
+    }
+}

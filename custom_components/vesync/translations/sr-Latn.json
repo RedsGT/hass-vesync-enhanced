@@ -1,0 +1,163 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "VeSync nalog je ve\u0107 pode\u0161en",
+            "reauth_successful": "Ponovna prijava je uspe\u0161na",
+            "wrong_account": "Nalog koji poku\u0161avate ponovo da autentifikujete razlikuje se od onog koji je konfigurisan"
+        },
+        "error": {
+            "api_response_error": "Gre\u0161ka u odgovoru API-ja",
+            "invalid_auth": "Neispravna prijava",
+            "server_error": "Do\u0161lo je do gre\u0161ke na serveru"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Lozinka",
+                    "username": "E\u2011po\u0161ta"
+                },
+                "data_description": {
+                    "password": "Lozinka povezana sa va\u0161im VeSync nalogom",
+                    "username": "Email adresa povezana sa va\u0161im VeSync nalogom"
+                },
+                "description": "VeSync integracija mora ponovo da prijavi va\u0161 nalog",
+                "title": "Prijava je istekla za {name}"
+            },
+            "user": {
+                "data": {
+                    "password": "Lozinka",
+                    "username": "E\u2011po\u0161ta"
+                },
+                "data_description": {
+                    "password": "Lozinka povezana sa va\u0161im VeSync nalogom",
+                    "username": "Email adresa povezana sa va\u0161im VeSync nalogom"
+                },
+                "description": "Unesite nalog koji se koristi u vesync aplikaciji. Dvofaktorska autentifikacija (2FA) nije podr\u017eana i mora biti onemogu\u0107ena.",
+                "title": "Unesite korisni\u010dko ime i lozinku"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_lacks": {
+                "name": "Nizak nivo vode"
+            },
+            "water_tank_lifted": {
+                "name": "Rezervoar za vodu je podignut"
+            }
+        },
+        "fan": {
+            "vesync": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatski",
+                            "normal": "Normalno",
+                            "pet": "Ljubimac",
+                            "sleep": "Spavanje",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "vesync": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "humidity": "Vla\u017enost"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "mist_level": {
+                "name": "Nivo ovla\u017eivanja"
+            }
+        },
+        "select": {
+            "night_light_level": {
+                "name": "Nivo no\u0107nog svetla",
+                "state": {
+                    "bright": "Svetlo",
+                    "dim": "Prigu\u0161eno",
+                    "off": "Isklju\u010deno",
+                    "on": "Uklju\u010deno"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Kvalitet vazduha"
+            },
+            "cook_set_temp": {
+                "name": "Pode\u0161ena temperatura kuvanja"
+            },
+            "cook_set_time": {
+                "name": "Pode\u0161eno vreme kuvanja"
+            },
+            "cook_status": {
+                "name": "Status kuvanja",
+                "state": {
+                    "cooking": "Kuvanje",
+                    "cooking_end": "Kuvanje zavr\u0161eno",
+                    "cooking_stop": "Kuvanje zaustavljeno",
+                    "heating": "Prethodno zagrevanje",
+                    "preheat_end": "Prethodno zagrevanje zavr\u0161eno",
+                    "preheat_stop": "Prethodno zagrevanje zaustavljeno",
+                    "pull_out": "Fioka izvu\u010dena",
+                    "standby": "Pripravnost"
+                }
+            },
+            "current_power": {
+                "name": "Trenutna snaga"
+            },
+            "current_temp": {
+                "name": "Trenutna temperatura"
+            },
+            "current_voltage": {
+                "name": "Trenutni napon"
+            },
+            "energy_month": {
+                "name": "Mese\u010dna potro\u0161nja energije"
+            },
+            "energy_today": {
+                "name": "Dana\u0161nja potro\u0161nja energije"
+            },
+            "energy_week": {
+                "name": "Nedeljna potro\u0161nja energije"
+            },
+            "energy_year": {
+                "name": "Godi\u0161nja potro\u0161nja energije"
+            },
+            "filter_life": {
+                "name": "Vek trajanja filtera"
+            },
+            "preheat_set_time": {
+                "name": "Pode\u0161eno vreme prethodnog zagrevanja"
+            }
+        },
+        "switch": {
+            "auto_off_config": {
+                "name": "Automatsko isklju\u010divanje"
+            },
+            "child_lock": {
+                "name": "De\u010dija za\u0161tita"
+            },
+            "display": {
+                "name": "Prikaz"
+            },
+            "drying_mode_power_off": {
+                "name": "Omogu\u0107i re\u017eim su\u0161enja dok je napajanje isklju\u010deno"
+            }
+        }
+    },
+    "services": {
+        "update_devices": {
+            "description": "Dodaje nove VeSync ure\u0111aje u Home Assistant.",
+            "name": "A\u017euriraj ure\u0111aje"
+        }
+    }
+}
