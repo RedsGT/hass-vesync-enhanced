@@ -19,7 +19,7 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from .common import is_air_fryer, is_humidifier, fryer_start_cook, fryer_end_cook
+from .common import is_air_fryer, is_humidifier, fryer_start_cook, fryer_end_cook, device_temp_as_c, device_temp_as_f
 from .const import VS_DEVICES, VS_DISCOVERY
 from .coordinator import VesyncConfigEntry, VeSyncDataCoordinator
 from .entity import VeSyncBaseEntity
@@ -73,7 +73,7 @@ def _is_cooking(device) -> bool:
 
 def _current_time_min(device) -> int:
     rem = getattr(device.state, "cook_last_time", None)
-    return int(rem) if rem else int(_wfon_pending.get(device, "time_min"))
+    return int(rem) // 60 if rem else int(_wfon_pending.get(device, "time_min"))
 
 
 def _current_temp_c(device) -> float:
@@ -143,7 +143,7 @@ NUMBER_DESCRIPTIONS: list[VeSyncNumberEntityDescription] = [
         mode=NumberMode.BOX,
         exists_fn=lambda device: is_air_fryer(device) and hasattr(device, "set_mode_from_recipe"),
         value_fn=lambda device: (
-            int(round((device.state.cook_set_temp * 9 / 5) + 32))
+            int(round(device_temp_as_f(device, device.state.cook_set_temp)))
             if getattr(device.state, "cook_set_temp", None) is not None
             else _wfon_pending.get(device, "temp_f")
         ),
@@ -158,7 +158,7 @@ NUMBER_DESCRIPTIONS: list[VeSyncNumberEntityDescription] = [
         native_step=1,
         mode=NumberMode.BOX,
         exists_fn=lambda device: is_air_fryer(device) and hasattr(device, "set_mode_from_recipe"),
-        value_fn=lambda device: getattr(device.state, "cook_set_time", None) or _wfon_pending.get(device, "time_min"),
+        value_fn=lambda device: (int(device.state.cook_set_time // 60) if getattr(device.state, "cook_set_time", None) else _wfon_pending.get(device, "time_min")),
         set_value_fn=_wfon_stage_time,
     ),
 ]

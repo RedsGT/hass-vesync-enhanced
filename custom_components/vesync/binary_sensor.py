@@ -66,7 +66,7 @@ SENSOR_DESCRIPTIONS: tuple[VeSyncBinarySensorEntityDescription, ...] = (
             getattr(device.state, "cook_status", None) == "cooking"
             and getattr(device.state, "current_temp", None) is not None
             and getattr(device.state, "cook_set_temp", None) is not None
-            and (float(device.state.current_temp) * 9 / 5 + 32) >= (float(device.state.cook_set_temp) * 9 / 5 + 32) - 10
+            and float(device.state.current_temp) >= float(device.state.cook_set_temp) - 10
         ),
         exists_fn=lambda device: is_air_fryer(device),
     ),

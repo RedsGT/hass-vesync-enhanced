@@ -30,7 +30,7 @@ from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 from homeassistant.helpers.typing import StateType
 
-from .common import is_air_fryer, is_humidifier, is_outlet, rgetattr
+from .common import is_air_fryer, is_humidifier, is_outlet, rgetattr, device_temp_unit_name
 from .const import AIR_FRYER_MODE_MAP, VS_DEVICES, VS_DISCOVERY
 from .coordinator import VesyncConfigEntry, VeSyncDataCoordinator
 from .entity import VeSyncBaseEntity
@@ -223,7 +223,7 @@ SENSORS: tuple[VeSyncSensorEntityDescription, ...] = (
         translation_key="cook_set_time",
         device_class=SensorDeviceClass.DURATION,
         native_unit_of_measurement=UnitOfTime.MINUTES,
-        value_fn=lambda device: device.state.cook_set_time,
+        value_fn=lambda device: int(device.state.cook_set_time // 60) if getattr(device.state, "cook_set_time", None) else None,
         exists_fn=is_air_fryer,
     ),
     VeSyncSensorEntityDescription(
@@ -231,7 +231,7 @@ SENSORS: tuple[VeSyncSensorEntityDescription, ...] = (
         translation_key="preheat_set_time",
         device_class=SensorDeviceClass.DURATION,
         native_unit_of_measurement=UnitOfTime.MINUTES,
-        value_fn=lambda device: device.state.preheat_set_time,
+        value_fn=lambda device: int(device.state.preheat_set_time // 60) if getattr(device.state, "preheat_set_time", None) else None,
         exists_fn=lambda device: is_air_fryer(device) and rgetattr(device, "state.preheat_set_time") is not None,
     ),
     VeSyncSensorEntityDescription(
@@ -239,7 +239,7 @@ SENSORS: tuple[VeSyncSensorEntityDescription, ...] = (
         translation_key="cook_last_time",
         device_class=SensorDeviceClass.DURATION,
         native_unit_of_measurement=UnitOfTime.MINUTES,
-        value_fn=lambda device: device.state.cook_last_time,
+        value_fn=lambda device: int(device.state.cook_last_time // 60) if getattr(device.state, "cook_last_time", None) else None,
         exists_fn=is_air_fryer,
     ),
     VeSyncSensorEntityDescription(
@@ -332,8 +332,8 @@ class VeSyncSensorEntity(VeSyncBaseEntity, SensorEntity):
     def native_unit_of_measurement(self) -> str | None:
         """Return the unit the value was reported in by the sensor."""
         if self.entity_description.use_device_temperature_unit:
-            if self.device.temp_unit == "celsius":
+            if device_temp_unit_name(self.device) == "celsius":
                 return UnitOfTemperature.CELSIUS
-            if self.device.temp_unit == "fahrenheit":
+            if device_temp_unit_name(self.device) == "fahrenheit":
                 return UnitOfTemperature.FAHRENHEIT
         return super().native_unit_of_measurement

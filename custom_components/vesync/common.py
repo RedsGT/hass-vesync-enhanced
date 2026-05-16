@@ -116,3 +116,37 @@ async def fryer_start_cook(device, set_temp_c: float, set_time_min: int,
 async def fryer_end_cook(device) -> bool:
     """End the current cook on an air fryer."""
     return await device.end()
+
+
+# pyvesync 3.4+ stores fryer state in the device's native API units
+# (Fahrenheit + seconds for US TurboBlaze/Dual Blaze fryers). The
+# integration's helpers and entity descriptions historically assumed
+# normalized units. These helpers bridge the gap.
+
+def device_temp_unit_name(device) -> str | None:
+    """Return 'celsius' or 'fahrenheit' for the device's temp unit, or None."""
+    unit = getattr(device, "temp_unit", None)
+    if unit is None:
+        return None
+    name = getattr(unit, "name", None)
+    if name is not None:
+        return name.lower()
+    return str(unit).lower()
+
+
+def device_temp_as_f(device, value):
+    """Convert a temperature value from the device's native unit to Fahrenheit."""
+    if value is None:
+        return None
+    if device_temp_unit_name(device) == "celsius":
+        return float(value) * 9 / 5 + 32
+    return float(value)
+
+
+def device_temp_as_c(device, value):
+    """Convert a temperature value from the device's native unit to Celsius."""
+    if value is None:
+        return None
+    if device_temp_unit_name(device) == "fahrenheit":
+        return (float(value) - 32) * 5 / 9
+    return float(value)
