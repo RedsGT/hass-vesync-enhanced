@@ -13,7 +13,7 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from .common import is_air_fryer, is_humidifier, is_outlet, is_purifier
+from .common import is_air_fryer, is_humidifier, is_outlet, is_purifier, fryer_start_cook, fryer_end_cook
 from .const import (
     HUMIDIFIER_NIGHT_LIGHT_LEVEL_BRIGHT,
     HUMIDIFIER_NIGHT_LIGHT_LEVEL_DIM,
@@ -87,7 +87,7 @@ async def _wfon_stage_preset(device, preset: str) -> bool:
         _wfon_pending.set(device, "time_min", time_min)
     if getattr(device.state, "cook_status", None) in _ACTIVE_COOK_STATES:
         temp_f_now = _wfon_pending.get(device, "temp_f")
-        return await device.wfon_start_cook(
+        return await fryer_start_cook(device, 
             (temp_f_now - 32) * 5 / 9,
             _wfon_pending.get(device, "time_min"),
             _wfon_pending.get(device, "preset"),
@@ -174,7 +174,7 @@ SELECT_DESCRIPTIONS: list[VeSyncSelectEntityDescription] = [
         translation_key="cook_preset",
         options=_WFON_PRESETS,
         icon="mdi:chef-hat",
-        exists_fn=lambda device: is_air_fryer(device) and hasattr(device, "wfon_start_cook"),
+        exists_fn=lambda device: is_air_fryer(device) and hasattr(device, "set_mode_from_recipe"),
         select_option_fn=_wfon_stage_preset,
         current_option_fn=lambda device: getattr(device.state, "cook_mode", None) or _wfon_pending.get(device, "preset"),
     ),

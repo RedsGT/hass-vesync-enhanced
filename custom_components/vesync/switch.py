@@ -20,7 +20,7 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from .common import is_air_fryer, is_humidifier, is_outlet, is_wall_switch, rgetattr
+from .common import is_air_fryer, is_humidifier, is_outlet, is_wall_switch, rgetattr, fryer_start_cook, fryer_end_cook
 from .const import VS_DEVICES, VS_DISCOVERY
 from .coordinator import VesyncConfigEntry, VeSyncDataCoordinator
 from .entity import VeSyncBaseEntity
@@ -78,7 +78,7 @@ async def _wfon_cook_on(device) -> bool:
     """Start a cook using the staged pending settings (temp in °F)."""
     from . import _wfon_pending
     temp_f = _wfon_pending.get(device, "temp_f")
-    return await device.wfon_start_cook(
+    return await fryer_start_cook(device, 
         (temp_f - 32) * 5 / 9,
         _wfon_pending.get(device, "time_min"),
         _wfon_pending.get(device, "preset"),
@@ -86,7 +86,7 @@ async def _wfon_cook_on(device) -> bool:
 
 
 async def _wfon_cook_off(device) -> bool:
-    return await device.wfon_end_cook()
+    return await fryer_end_cook(device)
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -155,7 +155,7 @@ SENSOR_DESCRIPTIONS: Final[tuple[VeSyncSwitchEntityDescription, ...]] = (
         is_on=lambda device: getattr(device.state, "cook_status", None) in (
             "cooking", "preheating", "heating", "ready"
         ),
-        exists_fn=lambda device: is_air_fryer(device) and hasattr(device, "wfon_start_cook"),
+        exists_fn=lambda device: is_air_fryer(device) and hasattr(device, "set_mode_from_recipe"),
         on_fn=_wfon_cook_on,
         off_fn=_wfon_cook_off,
     ),

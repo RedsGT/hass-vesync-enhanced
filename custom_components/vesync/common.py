@@ -73,3 +73,46 @@ def is_air_fryer(device: VeSyncBaseDevice) -> TypeGuard[VeSyncFryer]:
     """Check if the device represents an air fryer."""
 
     return device.product_type == ProductTypes.AIR_FRYER
+
+
+# -- Air-fryer cook helpers (TurboBlaze / Dual Blaze native interface) -----
+from dataclasses import replace as _dc_replace
+from pyvesync.const import AirFryerPresets as _AirFryerPresets
+
+# Both display form ("Air Fry") and API form ("AirFry") accepted so we can
+# round-trip between the select entity's option names and what the device
+# state reports.
+_FRYER_PRESET_BY_NAME = {
+    "Air Fry":      _AirFryerPresets.air_fry,    "AirFry":       _AirFryerPresets.air_fry,
+    "Broil":        _AirFryerPresets.broil,
+    "Roast":        _AirFryerPresets.roast,
+    "Bake":         _AirFryerPresets.bake,
+    "Reheat":       _AirFryerPresets.reheat,
+    "Steak":        _AirFryerPresets.steak,
+    "Seafood":      _AirFryerPresets.seafood,
+    "Veggies":      _AirFryerPresets.veggies,
+    "French Fries": _AirFryerPresets.french_fries, "FrenchFries":  _AirFryerPresets.french_fries,
+    "Frozen":       _AirFryerPresets.frozen,
+    "Chicken":      _AirFryerPresets.chicken,
+}
+
+
+async def fryer_start_cook(device, set_temp_c: float, set_time_min: int,
+                           preset: str = "Air Fry") -> bool:
+    """Start a cook on a TurboBlaze-style air fryer.
+
+    Looks up the preset recipe from pyvesync.const.AirFryerPresets, overrides
+    target_temp (Fahrenheit, converted from the caller's Celsius) and
+    cook_time (seconds, from the caller's minutes), and calls
+    set_mode_from_recipe. Returns True on success.
+    """
+    template = _FRYER_PRESET_BY_NAME.get(preset, _AirFryerPresets.air_fry)
+    target_temp_f = round(set_temp_c * 9 / 5 + 32)
+    cook_time_sec = int(set_time_min * 60)
+    recipe = _dc_replace(template, target_temp=target_temp_f, cook_time=cook_time_sec)
+    return await device.set_mode_from_recipe(recipe)
+
+
+async def fryer_end_cook(device) -> bool:
+    """End the current cook on an air fryer."""
+    return await device.end()
