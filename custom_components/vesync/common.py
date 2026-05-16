@@ -150,3 +150,32 @@ def device_temp_as_c(device, value):
     if device_temp_unit_name(device) == "fahrenheit":
         return (float(value) - 32) * 5 / 9
     return float(value)
+
+
+# Inverse of _FRYER_PRESET_BY_NAME for entities that need to map a
+# device-reported cook_mode value back to the SELECT entity's option
+# label. Only the camelCase mismatches need explicit entries;
+# identical names (Broil, Roast, Bake, Reheat, Steak, Seafood, Veggies,
+# Frozen, Chicken) pass through.
+_COOK_MODE_TO_PRESET_NAME = {
+    "AirFry":      "Air Fry",
+    "FrenchFries": "French Fries",
+}
+
+# Set of pyvesync cook_mode values that map to a known display preset
+# (built once from _FRYER_PRESET_BY_NAME so additions stay in sync).
+_KNOWN_FRYER_COOK_MODES = {r.cook_mode for r in _FRYER_PRESET_BY_NAME.values()}
+
+
+def fryer_display_preset(device):
+    """Return the SELECT option label for the device's current cook_mode,
+    or None if cook_mode is missing / does not map (e.g. 'normal', 'Custom').
+    """
+    cm = getattr(getattr(device, "state", None), "cook_mode", None)
+    if not cm:
+        return None
+    if cm in _COOK_MODE_TO_PRESET_NAME:
+        return _COOK_MODE_TO_PRESET_NAME[cm]
+    if cm in _KNOWN_FRYER_COOK_MODES:
+        return cm
+    return None

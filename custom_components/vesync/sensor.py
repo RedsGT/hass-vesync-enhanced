@@ -52,6 +52,28 @@ class VeSyncSensorEntityDescription(SensorEntityDescription):
 
 
 
+def _wfon_cook_started(device):
+    """Datetime when the current/last cook started.
+
+    Prefers the timestamp stamped at the cooking-start transition; falls
+    back to deriving it from cook_set_time - cook_last_time so the value
+    survives HA restarts mid-cook.
+    """
+    from datetime import datetime, timedelta, timezone
+    from . import _wfon_pending
+    _ACTIVE = ("cooking", "preheating", "heating", "ready", "keeping")
+    status = getattr(getattr(device, "state", None), "cook_status", None)
+    stamped = _wfon_pending.get(device, "cook_start_time")
+    if stamped is not None:
+        return datetime.fromtimestamp(stamped, timezone.utc)
+    if status in _ACTIVE:
+        cook_set = getattr(device.state, "cook_set_time", None)
+        cook_last = getattr(device.state, "cook_last_time", None)
+        if cook_set is not None and cook_last is not None:
+            elapsed = max(0, int(cook_set) - int(cook_last))
+            return datetime.now(timezone.utc) - timedelta(seconds=elapsed)
+    return None
+
 def _wfon_cooldown_eta(device):
     """Datetime when fryer will be safe to handle, or None if already safe / cooking."""
     from datetime import datetime, timedelta, timezone
@@ -252,7 +274,7 @@ SENSORS: tuple[VeSyncSensorEntityDescription, ...] = (
         key="cook_start_time",
         translation_key="cook_start_time",
         device_class=SensorDeviceClass.TIMESTAMP,
-        value_fn=lambda device: getattr(device.state, "cook_start_time", None),
+        value_fn=_wfon_cook_started,
         exists_fn=is_air_fryer,
     ),
     VeSyncSensorEntityDescription(

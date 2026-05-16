@@ -6,7 +6,7 @@ doesn't kick off a cook on its own.
 """
 
 _DEFAULTS = {"temp_f": 350, "time_min": 15, "preset": "Air Fry",
-             "cook_end_time": None, "last_status": None,
+             "cook_end_time": None, "cook_start_time": None, "last_status": None,
              "last_cook_temp_c": None}
 _PENDING: dict[str, dict] = {}
 
@@ -35,6 +35,12 @@ def update_tracking(device) -> None:
     status = getattr(getattr(device, "state", None), "cook_status", None)
     last_status = get(device, "last_status")
     set(device, "last_status", status)
+    # cook_start_time: stamp on transition into an active cook state;
+    # clear once the device returns fully to standby.
+    if last_status not in _ACTIVE_COOK_STATES and status in _ACTIVE_COOK_STATES:
+        set(device, "cook_start_time", _time.time())
+    if status == "standby":
+        set(device, "cook_start_time", None)
     if status in _ACTIVE_COOK_STATES:
         set(device, "cook_end_time", None)
         set_temp = getattr(device.state, "cook_set_temp", None)
